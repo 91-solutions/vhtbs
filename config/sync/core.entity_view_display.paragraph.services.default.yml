@@ -1,0 +1,55 @@
+uuid: fee6c0a2-0f77-4c16-9e44-11af4c2a1f35
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.services.field_services_description
+    - field.field.paragraph.services.field_services_icon
+    - field.field.paragraph.services.field_services_read_more
+    - field.field.paragraph.services.field_services_title
+    - paragraphs.paragraphs_type.services
+  module:
+    - link
+    - text
+id: paragraph.services.default
+targetEntityType: paragraph
+bundle: services
+mode: default
+content:
+  field_services_description:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_services_icon:
+    type: entity_reference_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_services_read_more:
+    weight: 3
+    label: inline
+    settings:
+      trim_length: 80
+      target: _blank
+      url_only: false
+      url_plain: false
+      rel: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_services_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

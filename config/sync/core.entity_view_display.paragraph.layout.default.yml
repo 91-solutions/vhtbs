@@ -1,0 +1,43 @@
+uuid: 1efb98d2-d07d-4491-8c72-9594d0f3a602
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.layout.field_layout_left
+    - field.field.paragraph.layout.field_layout_right
+    - field.field.paragraph.layout.field_layout_size
+    - paragraphs.paragraphs_type.layout
+  module:
+    - entity_reference_revisions
+    - options
+id: paragraph.layout.default
+targetEntityType: paragraph
+bundle: layout
+mode: default
+content:
+  field_layout_left:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_layout_right:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_layout_size:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden: {  }

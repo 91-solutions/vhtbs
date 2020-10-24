@@ -1,0 +1,33 @@
+uuid: b25fc60a-74a4-4428-a2e5-500167804a33
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_layout_size
+field_name: field_layout_size
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '12'
+      label: 'Full Layout'
+    -
+      value: '3'
+      label: '25% Layout'
+    -
+      value: '6'
+      label: '50% Layout'
+    -
+      value: '9'
+      label: '75% Layout'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

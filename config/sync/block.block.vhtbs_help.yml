@@ -1,0 +1,22 @@
+uuid: 595fd415-3d44-4a57-8f5b-5fc9c7be06ea
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - vhtbs
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: vhtbs_help
+theme: vhtbs
+region: content
+weight: -30
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

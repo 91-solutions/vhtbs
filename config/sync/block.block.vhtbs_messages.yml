@@ -1,0 +1,22 @@
+uuid: 182d8154-fda3-498b-90d4-b67f4f6a636e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - vhtbs
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: vhtbs_messages
+theme: vhtbs
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

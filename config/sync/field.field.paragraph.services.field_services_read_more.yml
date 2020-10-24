@@ -1,0 +1,23 @@
+uuid: ef51ed0c-9bff-4f24-ad99-0f59f3238393
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_services_read_more
+    - paragraphs.paragraphs_type.services
+  module:
+    - link
+id: paragraph.services.field_services_read_more
+field_name: field_services_read_more
+entity_type: paragraph
+bundle: services
+label: 'Read More'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

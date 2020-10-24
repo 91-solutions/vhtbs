@@ -1,0 +1,20 @@
+uuid: d341973d-d212-4a3d-92e0-9516f08dc0c0
+langcode: en
+status: true
+dependencies:
+  theme:
+    - vhtbs
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: vhtbs_local_actions
+theme: vhtbs
+region: content
+weight: -20
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,20 @@
+uuid: 82e328d5-533a-4897-b50f-8cf1b052fbc3
+langcode: en
+status: true
+dependencies:
+  theme:
+    - vhtbs
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: vhtbs_page_title
+theme: vhtbs
+region: content
+weight: -50
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

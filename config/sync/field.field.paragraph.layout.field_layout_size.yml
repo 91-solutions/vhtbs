@@ -1,0 +1,21 @@
+uuid: 7d6d0a46-2ca1-47fb-bd64-0e3231766d5f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_layout_size
+    - paragraphs.paragraphs_type.layout
+  module:
+    - options
+id: paragraph.layout.field_layout_size
+field_name: field_layout_size
+entity_type: paragraph
+bundle: layout
+label: Layouts
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
