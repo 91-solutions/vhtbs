@@ -1,0 +1,14 @@
+uuid: c0ff3cf2-27df-4ac2-8775-de868daeb117
+name: VHTBS
+mail: info@vhtbs.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE
