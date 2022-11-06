@@ -66,5 +66,8 @@
 
 # Setup files
 /.ddev
-/.DS_STORE
+*.DS_STORE
+/web/*/.DS_STORE
+/web/sites/*/.DS_STORE
+/web/sites/default/*/.DS_STORE
 /*.sql
