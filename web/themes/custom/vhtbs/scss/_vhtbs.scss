@@ -1,0 +1,46 @@
+img {
+  width: 100%;
+}
+.shadow--black {
+  color: #fff;
+  text-shadow: 2px 2px #000;
+}
+.carousel {
+  position: relative;
+  .slick {
+    &-right { /* keeps right arrow to the right */
+      right: 0;
+      top: 0;
+    }
+    &-track {
+      display: flex !important;
+    }
+    
+    &-slide {
+      height: inherit !important;
+    }
+    .slide {
+      &__caption {
+        color: white;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        line-height: 100vh;
+        text-align: center;
+        z-index: 10;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+.slide-banner {
+  .h5 {
+    padding: 2rem 0;
+    font-size: 2rem;
+    width: 100%;
+    background: #f7f6f6;
+    vertical-align: middle;
+  }
+}

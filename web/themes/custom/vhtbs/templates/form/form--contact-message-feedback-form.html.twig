@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ *
+ * @ingroup themeable
+ */
+#}
+<form{{ attributes }}>
+  <div class="site-contact-details alert alert-success" role="alert">
+    {% for label, item in site_details %}
+      <div class="contact-details">
+        <label class="label">{{ label|title }}:</label>
+        <span>{{ item}}</span>
+      </div>
+    {% endfor %}
+  </div>
+  {{ children }}
+</form>

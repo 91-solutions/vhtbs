@@ -1,0 +1,117 @@
+<?php
+/**
+ * @file vhbts_custom file.
+ */
+
+use  \Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function vhtbs_custom_form_alter(&$form, $form_state, $form_id) {
+  if (strpos($form_id, 'contact_message_') !== FALSE) {
+    $form['actions']['preview']['#access'] = FALSE;
+  }
+  if ($form_id == "system_site_information_settings") {
+    vhtbs_custom_system_site_information_settings_alter($form, $form_state);
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function vhtbs_custom_system_site_information_settings_alter(&$form, FormStateInterface $form_state) {
+  $config = \Drupal::config('system.site');
+
+  $form['site_information']['contact'] = [
+    "#type" => "details",
+    "#title" => t("Site Contact Details"),
+    '#open' => TRUE,
+  ];
+  $form['site_information']['contact']["site_phone"] = [
+    "#type" => "textfield",
+    "#title" =>  t("Mobile Phone"),
+    "#size" => 10,
+    "#maxlength" => 10,
+    "#default_value" => $config->get("phone"),
+    "#description" => t("Maximum 10 digits."),
+  ];
+  $form['site_information']['contact']["site_altphone"] = [
+    "#type" => "textfield",
+    "#title" =>  t("Alternate Phone"),
+    "#size" => 12,
+    "#maxlength" => 12,
+    "#default_value" => $config->get("altphone"),
+    "#description" => t("Maximum 12 digits."),
+  ];
+
+  $form['site_information']['contact']["site_address"] = [
+    "#type" => "textarea",
+    "#title" =>  t("Address"),
+    "#default_value" => $config->get("address"),
+  ];
+  $form['site_information']['contact']['token_tree'] = [
+    '#theme' => 'token_tree_link',
+    '#token_types' => ['user'],
+    'text' => NULL,
+    'options' => [],
+  ];
+  $form['site_information']['contact']["social_links"] = [
+    "#type" => "details",
+    "#title" => t("Social Address"),
+    '#open' => TRUE,
+  ];
+  $form['site_information']['contact']["social_links"]['site_google'] = [
+    "#type" => "url",
+    "#title" =>  t("Google"),
+    "#default_value" => $config->get("google"),
+  ];
+  $form['site_information']['contact']["social_links"]['site_facebook'] = [
+    "#type" => "url",
+    "#title" =>  t("Facebook"),
+    "#default_value" => $config->get("facebook"),
+  ];
+  $form['site_information']['contact']["social_links"]['site_linkdin'] = [
+    "#type" => "url",
+    "#title" =>  t("Linkdin"),
+    "#default_value" => $config->get("linkdin"),
+  ];
+  $form['site_information']['contact']["social_links"]['site_twitter'] = [
+    "#type" => "url",
+    "#title" =>  t("Twitter"),
+    "#default_value" => $config->get("twitter"),
+  ];
+
+  $form['#validate'][] = "vhtbs_custom_site_information_setting_validate";
+  $form['#submit'][] = "vhtbs_custom_site_information_setting_submit";
+
+  return $form;
+}
+
+/**
+ * Site information settings form submit handler.
+ */
+function vhtbs_custom_site_information_setting_validate($form, FormStateInterface $form_state) {
+  $values = $form_state->getValues();
+  if ($values['site_phone'] == $values['site_altphone']) {
+    $form_state->setErrorByName('site_altphone', t('Please enter different alternate phone than Phone.'));
+  }
+  if ((strlen((string) $values['site_phone']) > 0 && strlen((string) $values['site_phone']) < 10) ||
+  (strlen((string) $values['site_altphone']) > 0 && strlen((string) $values['site_altphone']) < 12)) {
+    $form_state->setErrorByName('site_altphone', t('Phone must have at least 10 valid numbers.'));
+  }
+}
+
+/**
+ * Site information settings form submit handler.
+ */
+function vhtbs_custom_site_information_setting_submit($form, FormStateInterface $form_state) {
+  $config = \Drupal::service('config.factory')->getEditable('system.site');
+  $values = $form_state->getValues();
+
+  foreach ($values as $site_key => $site_value) {
+    if (strpos($site_key, "site_") !== FALSE) {
+      $config->set(substr($site_key, 5), $site_value)->save();
+    }
+  }
+}
