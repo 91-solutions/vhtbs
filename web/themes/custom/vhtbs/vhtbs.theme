@@ -63,7 +63,7 @@ function vhtbs_preprocess_form(&$variables) {
 
     $variables['site_details'] = [
       "phone" => $config->get("phone") ? $config->get("phone") : $config->get("altphone"),
-      "address" => $config->get("address") ? $config->get("address") : "Delhi",
+      "address" => $config->get("address.value") ? $config->get("address.value") : "Delhi, India",
     ];
   }
 }

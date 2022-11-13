@@ -17,7 +17,7 @@
     {% for label, item in site_details %}
       <div class="contact-details">
         <label class="label">{{ label|title }}:</label>
-        <span>{{ item}}</span>
+        <span>{{ item|raw }}</span>
       </div>
     {% endfor %}
   </div>

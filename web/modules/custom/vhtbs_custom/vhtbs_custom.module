@@ -46,10 +46,12 @@ function vhtbs_custom_system_site_information_settings_alter(&$form, FormStateIn
   ];
 
   $form['site_information']['contact']["site_address"] = [
-    "#type" => "textarea",
+    "#type" => "text_format",
+    '#rows' => 10,
     "#title" =>  t("Address"),
-    "#default_value" => $config->get("address"),
+    "#default_value" => $config->get("address.value"),
   ];
+
   $form['site_information']['contact']['token_tree'] = [
     '#theme' => 'token_tree_link',
     '#token_types' => ['user'],
