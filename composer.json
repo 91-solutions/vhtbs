@@ -16,14 +16,16 @@
     ],
     "require": {
         "composer/installers": "^1.9",
-        "drupal/admin_toolbar": "^3.2",
-        "drupal/adminimal_theme": "^1.6",
+        "drupal/admin_toolbar": "^3.6",
+        "drupal/adminimal_theme": "^1.7",
         "drupal/backup_migrate": "^5.0",
-        "drupal/bootstrap5": "^2.0",
+        "drupal/bartik": "^1.0",
+        "drupal/bootstrap5": "^4.0",
         "drupal/captcha": "^1.5",
-        "drupal/core-composer-scaffold": "^9.4",
-        "drupal/core-project-message": "^9.4",
-        "drupal/core-recommended": "^9.4",
+        "drupal/color": "^1.0",
+        "drupal/core-composer-scaffold": "^10",
+        "drupal/core-project-message": "^10",
+        "drupal/core-recommended": "^10",
         "drupal/devel": "^5.0",
         "drupal/easy_breadcrumb": "^2.0",
         "drupal/entity_usage": "^2.0@beta",
@@ -31,15 +33,15 @@
         "drupal/field_group": "^3.4",
         "drupal/fvm": "^2.0",
         "drupal/honeypot": "^2.1",
-        "drupal/html_formatter": "^1.4",
-        "drupal/link_attributes": "^1.11",
-        "drupal/menu_link_attributes": "^1.2",
+        "drupal/html_formatter": "^2.0",
+        "drupal/link_attributes": "^2.1",
+        "drupal/menu_link_attributes": "^1.5",
         "drupal/paragraphs": "^1.15",
         "drupal/pathauto": "^1.11",
         "drupal/smtp": "^1.2",
         "drupal/twig_tweak": "^3.2",
         "drupal/twig_vardumper": "^3.1",
-        "drush/drush": "^11.3"
+        "drush/drush": "^12"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -111,5 +113,8 @@
                 "      composer remove drupal/core-project-message"
             ]
         }
+    },
+    "require-dev": {
+        "drupal/upgrade_status": "^4.3"
     }
 }
