@@ -16,7 +16,7 @@
     ],
     "require": {
         "composer/installers": "^1.9",
-        "drupal/admin_toolbar": "^3.6",
+        "drupal/admin_toolbar": "3.5",
         "drupal/adminimal_theme": "^1.7",
         "drupal/backup_migrate": "^5.0",
         "drupal/bartik": "^1.0",
