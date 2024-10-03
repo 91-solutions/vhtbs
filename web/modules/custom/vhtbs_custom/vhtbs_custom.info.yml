@@ -2,4 +2,4 @@ name: VHTBS custom
 description: Provides custom features.
 package: Custom
 type: module
-core_version_requirement: ^8.8.0 || ^9
+core_version_requirement: ^9 || ^10
